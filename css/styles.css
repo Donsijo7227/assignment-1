@@ -1,0 +1,162 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Grid Container */
+.grid-container {
+    width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto auto;
+    grid-template-areas:
+        "header"
+        "hero"
+        "about"
+        "services"
+        "contact"
+        "footer";
+    gap: 20px;
+}
+
+/* Header styles */
+header {
+    grid-area: header;
+    background-color: #000;
+    color: #fff;
+    padding: 1rem 0;
+    margin: 5px;
+    border-radius: 30px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ccc;
+}
+
+/* Hero section */
+#hero {
+    grid-area: hero;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 4rem 0;
+    border-radius: 5px;
+}
+
+#hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+/* About section */
+#about {
+    grid-area: about;
+    padding: 2rem;
+    background-color: #fff;
+}
+
+/* Services section */
+#services {
+    grid-area: services;
+    padding: 2rem;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.service-item {
+    background-color: #fff;
+    padding: 1.5rem;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Contact form */
+#contact {
+    grid-area: contact;
+    padding: 2rem;
+    background-color: #fff;
+}
+
+form {
+    display: grid;
+    gap: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+input, textarea, button {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    width: 30%;
+    transition: background-color 0.3s ease;
+}
+.btn{
+    display: flex;
+    justify-content: center;
+}
+
+button:hover {
+    background-color: #333;
+}
+
+/* Footer styles */
+footer {
+    grid-area: footer;
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+
+/* Media queries */
+@media (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "header header header"
+            "hero hero hero"
+            "about about about"
+            "services services services"
+            "contact contact contact"
+            "footer footer footer";
+    }
+}
